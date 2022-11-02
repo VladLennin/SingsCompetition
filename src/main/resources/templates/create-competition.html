@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Створити конкурс </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<img class="-z-10 absolute h-screen w-screen "
+     src="https://images.wallpaperscraft.ru/image/single/dirizher_orkestr_skripki_145362_1920x1080.jpg">
+<header th:insert="navbar.html ::navbar"></header>
+<main class="flex justify-center items-center">
+    <div class="flex flex-col justify-center  items-center h-[75vh] w-[75vw] rounded-2xl bg-yellow-200 mt-10">
+
+        <form action="/create-competition" method="post">
+
+            <div class="flex justify-between mx-5 w-full mb-4">
+                <h3>Назва конкурсу</h3>
+                <input class="rounded p-2" placeholder="Назва конкурсу" name="name" type="text">
+            </div>
+
+            <div class="flex justify-between mx-5 w-full mb-4">
+                <h3>Дата проведення</h3>
+                <input class="rounded p-2" name="date" type="date">
+            </div>
+
+            <div class="flex justify-between mx-5 w-full">
+                <h3>Опис</h3>
+                <textarea class="rounded p-2" name="description"></textarea>
+            </div>
+
+            <div class="flex justify-center mt-5">
+                <button class="border rounded px-2 py-1 hover:scale-110 duration-200 bg-blue-300 hover:bg-blue-500"
+                        type="submit">
+                    Створити
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</main>
+
+</body>
+</html>

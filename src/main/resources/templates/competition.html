@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конкурс</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<img class="-z-10 absolute h-screen w-screen "
+     src="https://images.wallpaperscraft.ru/image/single/dirizher_orkestr_skripki_145362_1920x1080.jpg">
+<header th:insert="navbar.html ::navbar"></header>
+<main class="flex justify-center ">
+    <div class="flex flex-col justify-start   h-[75vh] w-[75vw] rounded-2xl bg-yellow-200 mt-10">
+        <div class="flex justify-around w-full   items-top mt-10">
+            <div class="flex justify-between text-2xl mx-10">
+                <h3 class="mr-4">Дата проведення:</h3>
+                <h3 class="mr-2" th:text="${competition.getDate()}"></h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                     class="bi bi-calendar-date" viewBox="0 0 16 16">
+                    <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                </svg>
+            </div>
+            <div class="flex justify-between text-2xl mx-10">
+                <h3 class="mr-4">Назва:</h3>
+                <h3 class="mr-2" th:text="${competition.getName()}"></h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-tag"
+                     viewBox="0 0 16 16">
+                    <path d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0z"/>
+                    <path d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1zm0 5.586 7 7L13.586 9l-7-7H2v4.586z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center mt-5 mb-1 text-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-text mr-3" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            <h3>Опис конкурсу</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-text ml-3" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </div>
+        <div class="text-center mb-2 p-4 border-2 rounded-xl flex justify-center mx-16 bg-gray-300 hover:scale-105 duration-200">
+            <h3 th:text="${competition.getDescription()}"></h3>
+        </div>
+
+        <div class="flex justify-center my-5">
+            <a th:if="${competition.isActive()}" th:href="'/reg-on-competition/'+${competition.id}"
+               class="px-5 py-3 bg-blue-300 text-3xl rounded-l hover:scale-105 duration-200 hover:bg-blue-400">Зареєструвати
+                команду</a>
+        </div>
+        <div class="flex  justify-between px-2 py-1 rounded border-2 bg-gray-300 opacity-75 mt-1 mx-5">
+            <div>
+                Назва команди
+            </div>
+            <div>
+                Тип команди
+            </div>
+            <div class="flex w-1/6 justify-center">
+                Керівник
+            </div>
+        </div>
+
+        <div th:each="competitor:${competition.getCompetitors()}">
+            <a th:href="'/competition/'+${competition.getId()}+'/competitor/'+${competitor.getId()}">
+                <div class="flex justify-between px-2 py-1 rounded border-2 bg-gray-300 opacity-75 mt-1 mx-5 hover:scale-105 duration-300 ">
+                    <div th:text="${competitor.name}">
+                    </div>
+                    <div th:text="${competitor.type.getName()}">
+                    </div>
+                    <div class="flex justify-between w-1/6">
+                        <div th:text="${competitor.leader.name}">
+                        </div>
+                        <div th:text="${competitor.leader.surname}">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+</main>
+</body>
+</html>

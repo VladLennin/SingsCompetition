@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація на конкурс</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<img class="-z-10 absolute h-screen w-screen "
+     src="https://images.wallpaperscraft.ru/image/single/dirizher_orkestr_skripki_145362_1920x1080.jpg">
+<header th:insert="navbar.html ::navbar"></header>
+<main class="flex justify-center items-center">
+    <div class="flex flex-col justify-start  items-center min-h-[75vh] w-[75vw] rounded-2xl bg-yellow-200 mt-10">
+        <div class="flex justify-between w-1/2 mt-5 text-2xl bold">
+            <h3>Керівник команди:</h3>
+            <div class="flex">
+                <h3 class="mr-2" th:text="${leader.name}"></h3>
+                <h3 th:text="${leader.surname}"></h3>
+            </div>
+        </div>
+        <hr class="mx-10 my-2">
+        <form th:action="'/reg-on-competition/'+${id}" method="post">
+            <div class="flex flex-col w-full">
+                <div class="flex justify-between mb-4 text-xl">
+                    <h3>Назва:</h3>
+                    <input name="name" class="rounded" type="text">
+                </div>
+                <div class="flex justify-between text-xl">
+                    <h3>Тип:</h3>
+                    <select class="px-2 py-1 bg-blue-200 mb-3 mb-3" name="type">
+                        <option th:each="type:${types}" th:value="${type.name()}" th:text="${type.getName()}"></option>
+                    </select>
+                </div>
+
+
+                <div name="members" id="members" class="scroll text-xl">
+
+                </div>
+
+                <div class="flex my-4 justify-between w-full text-xl">
+                    <h3 class="mr-4">П.І.Б. учасника</h3>
+                    <input id="pib" type="text" class="rounded">
+                    <button type="button" onclick="addMember()" class="text-2xl mx-1">+</button>
+                </div>
+
+                <button class="rounded px-2 py-1 bg-blue-300 hover:scale-105 hover:bg-blue-400 duration-200"
+                        type="submit">Додати команду
+                </button>
+            </div>
+        </form>
+
+    </div>
+</main>
+<script>
+    function addMember() {
+        let div = document.getElementById("members")
+        let input = document.getElementById("pib")
+        div.innerHTML.substring(div.innerHTML.length - 6)
+        if (input.value.length >= 4) {
+            div.innerHTML += "<input type='text' value='" + input.value + "' readonly name='members' class='bg-gray-300 rounded p-1 w-full m-1'><div/>"
+            input.value = ""
+        }
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профіль</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<img class="-z-10 absolute h-screen w-screen "
+     src="https://images.wallpaperscraft.ru/image/single/dirizher_orkestr_skripki_145362_1920x1080.jpg">
+<header th:insert="navbar.html ::navbar"></header>
+<main class="flex justify-center items-center">
+    <div class="flex flex-col justify-center  items-center h-[75vh] w-[75vw] rounded-2xl bg-yellow-200 mt-10">
+        <div class="text-6xl text-center mb-10">
+            Профіль
+        </div>
+        <div class="flex justify-between items-center w-1/4 text-4xl">
+            <h1>Логін:</h1>
+            <h1 th:text="${user.username}"></h1>
+        </div>
+
+        <div class="flex justify-between items-center w-1/4 text-4xl">
+            <h1>Імʼя:</h1>
+            <h1 th:text="${user.name}"></h1>
+        </div>
+
+        <div class="flex justify-between items-center w-1/4 text-4xl">
+            <h1>Фамілія:</h1>
+            <h1 th:text="${user.surname}"></h1>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>

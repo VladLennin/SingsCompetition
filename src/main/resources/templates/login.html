@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<body>
+<main>
+    <img class="-z-10 absolute h-screen w-screen"
+         src="https://images.wallpaperscraft.ru/image/single/dirizher_orkestr_skripki_145362_1920x1080.jpg" alt="">
+    <div class="flex items-center justify-center h-screen ">
+        <div class="mb-3 w-[20vw] bg-blue-400 rounded-xl border-2 border-blue-700 grid grid-cols-1 hover:scale-110 duration-300 shadow-2xl">
+
+            <form action="/login" method="post">
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="bold text-black">Логін:</h2>
+                    <input placeholder="Логін" name="username" class="border-2 rounded" type="text">
+                </div>
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="bold text-black">Пароль:</h2>
+                    <input placeholder="Пароль" name="password" class="border-2 rounded" type="password">
+                </div>
+                <div class="flex justify-center items-center p-2">
+                    <button class="rounded bg-yellow-400 px-2 py-1 hover:scale-110 duration-200 " type="submit">
+                        Увійти
+                    </button>
+                </div>
+            </form>
+
+            <div class="flex justify-center items-center mb-2">
+                <a class="text-xs p-1 text-black hover:text-white duration-300 rounded  hover:bg-gray-500"
+                   href="/registration">Не маєте профілю?Створіть!</a>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

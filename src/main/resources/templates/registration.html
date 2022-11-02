@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<img class="-z-10 absolute h-screen w-screen"
+     src="https://images.wallpaperscraft.ru/image/single/dirizher_orkestr_skripki_145362_1920x1080.jpg" alt="">
+<div class="flex items-center justify-center h-screen ">
+    <div class=" mx-2 bg-blue-400 rounded-xl border-2 border-blue-700 grid grid-cols-1 hover:scale-110 duration-300 shadow-2xl">
+        <form action="/registration" method="post">
+            <div class="flex justify-between items-center p-2">
+                <h2 class="bold text-black">Логін:</h2>
+                <input placeholder="Логін" name="username" class="border-2 rounded" type="text">
+            </div>
+            <div class="flex justify-between items-center p-2">
+                <h2 class="bold text-black">Пароль:</h2>
+                <input name="password1" placeholder="Пароль" class="border-2 rounded" type="password">
+            </div>
+            <div class="flex justify-between items-center p-2">
+                <h2 class="bold text-black">Пов.пароль:</h2>
+                <input name="password2" placeholder="Пов.пароль" class="border-2 rounded" type="password">
+            </div>
+            <div class="flex justify-between items-center p-2">
+                <h2 class="bold text-black">Імʼя:</h2>
+                <input name="name" placeholder="Імʼя" class="border-2 rounded" type="text">
+            </div>
+            <div class="flex justify-between items-center p-2">
+                <h2 class="bold text-black">Фамілія:</h2>
+                <input name="surname" placeholder="Фамілія" class="border-2 rounded" type="text">
+            </div>
+
+
+
+            <div class="flex justify-center items-center p-2">
+                <button type="submit" class="bg-yellow-400 rounded-xl px-2 py-1 hover:scale-110 duration-200  ">Create profile
+                </button>
+            </div>
+
+        </form>
+        <div class="flex justify-center items-center mb-2">
+            <a class="text-xs p-1 text-black hover:text-white duration-300 rounded  hover:bg-gray-500" href="/login">
+                Вже є профіль?</a>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
